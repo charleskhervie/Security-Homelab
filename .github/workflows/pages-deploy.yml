@@ -18,9 +18,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: jekyll-theme-chirpy-7.5.0
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,6 +29,7 @@ jobs:
         with:
           ruby-version: '3.3'
           bundler-cache: true
+          working-directory: 'jekyll-theme-chirpy-7.5.0' # 👈 Explicitly forces Ruby to see the Gemfile
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -39,6 +37,7 @@ jobs:
           node-version: '20'
 
       - name: Install Tools & Build Site
+        working-directory: 'jekyll-theme-chirpy-7.5.0' # 👈 Explicitly forces npm to see package.json
         run: |
           npm install
           bundle exec jekyll build
