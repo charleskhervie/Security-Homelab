@@ -53,10 +53,10 @@ Before installing Active Directory, the base server operating system was provisi
 - Installed the Active Directory Domain Services (AD DS) and DNS Server roles using Server Manager
 - Promoted the server to a Domain Controller (DC), establishing a brand-new forest named `lab.charles.com`
 
-![Deployment Configuration](/assets/img/posts/active-directory/Screenshot%202026-06-02%20183725.png){: width="700" height="400" }
+![Deployment Configuration](/assets/img/posts/active-directory/Screenshot%202026-06-02%20183725.png){: width="700" height="400" .no-lazy}
 _Domain Controller deployment configuration_
 
-![OU Automation Command](/assets/img/posts/active-directory/Screenshot%202026-06-02%20200114.png){: width="700" height="400" }
+![OU Automation Command](/assets/img/posts/active-directory/Screenshot%202026-06-02%20200114.png){: width="700" height="400" .no-lazy}
 _PowerShell command window used during Active Directory configuration_
 
 ### 2. Automated Logical Architecture Design (OUs and Groups)
@@ -72,27 +72,27 @@ To demonstrate production-level scalability, the entire corporate hierarchy was 
 
 **Step 1: Create a Security Group**
 
-![Security Group Creation](/assets/img/posts/active-directory/Screenshot%202026-06-02%20213940.png){: width="700" height="400" }
+![Security Group Creation](/assets/img/posts/active-directory/Screenshot%202026-06-02%20213940.png){: width="700" height="400" .no-lazy}
 _Right-click in ADUC > New > Group, enter group name and scope_
 
 **Step 2: Create User Accounts**
 
-![User Creation](/assets/img/posts/active-directory/Screenshot%202026-06-02%20214304.png){: width="700" height="400" }
+![User Creation](/assets/img/posts/active-directory/Screenshot%202026-06-02%20214304.png){: width="700" height="400" .no-lazy}
 _Right-click OU > New > User, fill in user details_
 
 **Step 3: Verify OU Structure**
 
-![OU Object View](/assets/img/posts/active-directory/Screenshot%202026-06-02%20214859.png){: width="700" height="400" }
+![OU Object View](/assets/img/posts/active-directory/Screenshot%202026-06-02%20214859.png){: width="700" height="400" .no-lazy}
 _View all created objects in the OU tree_
 
 **Step 4: Configure Group Properties**
 
-![Group Configuration](/assets/img/posts/active-directory/Screenshot%202026-06-02%20214954.png){: width="700" height="400" }
+![Group Configuration](/assets/img/posts/active-directory/Screenshot%202026-06-02%20214954.png){: width="700" height="400" .no-lazy}
 _Edit group settings and members in properties dialog_
 
 **Step 5: Assign Users to Groups**
 
-![User Group Membership](/assets/img/posts/active-directory/Screenshot%202026-06-02%20215130.png){: width="700" height="400" }
+![User Group Membership](/assets/img/posts/active-directory/Screenshot%202026-06-02%20215130.png){: width="700" height="400" .no-lazy}
 _Add users to security groups via group members tab_
 
 #### 2.2 Automated Creation via PowerShell
@@ -132,10 +132,10 @@ Write-Host "Successfully added users to HR group"
 
 **Step 6: Verify Automated Creation Results**
 
-![PowerShell Automation Script](/assets/img/posts/active-directory/Screenshot%202026-06-03%20153136.png){: width="700" height="400" }
+![PowerShell Automation Script](/assets/img/posts/active-directory/Screenshot%202026-06-03%20153136.png){: width="700" height="400" .no-lazy}
 _PowerShell script execution window_
 
-![ADUC Hierarchy](/assets/img/posts/active-directory/Screenshot%202026-06-03%20153242.png){: width="700" height="400" }
+![ADUC Hierarchy](/assets/img/posts/active-directory/Screenshot%202026-06-03%20153242.png){: width="700" height="400" .no-lazy}
 _All OUs, groups, and users now visible in ADUC_
 
 ### 3. Domain Renaming (Optional)
@@ -153,19 +153,19 @@ This creates `Domainlist.xml` containing your domain blueprint.
 - Replace old domain names with new one
 - Update `<NetBiosName>` if changing root name
 
-![Rendom List Command](/assets/img/posts/active-directory/Screenshot%202026-06-03%20223439.png){: width="700" height="400" }
+![Rendom List Command](/assets/img/posts/active-directory/Screenshot%202026-06-03%20223439.png){: width="700" height="400" .no-lazy}
 _Generating the domain rename XML file with rendom_
 
-![Domainlist XML File](/assets/img/posts/active-directory/Screenshot%202026-06-03%20223543.png){: width="700" height="400" }
+![Domainlist XML File](/assets/img/posts/active-directory/Screenshot%202026-06-03%20223543.png){: width="700" height="400" .no-lazy}
 _Generated Domainlist XML file_
 
-![Domainlist XML Contents](/assets/img/posts/active-directory/Screenshot%202026-06-03%20223654.png){: width="700" height="400" }
+![Domainlist XML Contents](/assets/img/posts/active-directory/Screenshot%202026-06-03%20223654.png){: width="700" height="400" .no-lazy}
 _Reviewing the domain rename XML contents_
 
-![Editing Domain XML](/assets/img/posts/active-directory/Screenshot%202026-06-03%20223812.png){: width="700" height="400" }
+![Editing Domain XML](/assets/img/posts/active-directory/Screenshot%202026-06-03%20223812.png){: width="700" height="400" .no-lazy}
 _Editing domain values in the XML file_
 
-![Updated Domain XML](/assets/img/posts/active-directory/Screenshot%202026-06-03%20224358.png){: width="700" height="400" }
+![Updated Domain XML](/assets/img/posts/active-directory/Screenshot%202026-06-03%20224358.png){: width="700" height="400" .no-lazy}
 _Updated domain rename XML values_
 
 **Step 3: Upload and Validate**
@@ -180,10 +180,10 @@ rendom /execute
 ```
 Note: The AD will reboot if successful.
 
-![Rendom Upload Prepare](/assets/img/posts/active-directory/Screenshot%202026-06-03%20224708.png){: width="700" height="400" }
+![Rendom Upload Prepare](/assets/img/posts/active-directory/Screenshot%202026-06-03%20224708.png){: width="700" height="400" .no-lazy}
 _Uploading and preparing the domain rename configuration_
 
-![Rendom Execute](/assets/img/posts/active-directory/Screenshot%202026-06-03%20224832.png){: width="700" height="400" }
+![Rendom Execute](/assets/img/posts/active-directory/Screenshot%202026-06-03%20224832.png){: width="700" height="400" .no-lazy}
 _Executing the domain rename workflow_
 
 **Step 5: Clean Up Group Policies**
@@ -193,10 +193,10 @@ gpfixup /oldnb:LABCHARLES /newnb:LABCORP
 rendom /end
 ```
 
-![Group Policy Fixup](/assets/img/posts/active-directory/Screenshot%202026-06-03%20225837.png){: width="700" height="400" }
+![Group Policy Fixup](/assets/img/posts/active-directory/Screenshot%202026-06-03%20225837.png){: width="700" height="400" .no-lazy}
 _Cleaning up domain rename references and policies_
 
-![Post-Rename ADUC View](/assets/img/posts/active-directory/Screenshot%202026-06-03%20225942.png){: width="700" height="400" }
+![Post-Rename ADUC View](/assets/img/posts/active-directory/Screenshot%202026-06-03%20225942.png){: width="700" height="400" .no-lazy}
 _Post-rename Active Directory Users and Computers view_
 
 ### 4. Bulk User Provisioning & Password Compliance
@@ -335,3 +335,5 @@ The OU and security group structure separates standard departmental tier access 
 **Domain Controller**: Running and operational  
 **Users Provisioned**: 15+ mock accounts across 3 departments  
 **Testing**: All DNS and AD health checks passing
+
+SimplyCodes
