@@ -1,0 +1,8 @@
+/* Hide loading animation for images */
+.load {
+  background: none !important;
+}
+
+img[data-src] {
+  background: none !important;
+}
