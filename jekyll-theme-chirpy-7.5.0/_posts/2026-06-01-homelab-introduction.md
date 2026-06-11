@@ -6,9 +6,9 @@ tags: [Virtualization, VMware, Network, Architecture]
 author: Charles Khervie Realino
 ---
 
-For quite some time, I have wanted to build my own dedicated homelab for defensive security and Blue Team operations. I used to have the same desire to stand up a clean Red Team lab, but it always ended up as a single baseline Kali Linux image or one random victim machine. Like most people starting out, I was heavily relying on guided online training platforms. While those environments are amazing, you download a configuration file, jump on their VPN, and follow a pre-determined track. You are mostly forced to look at exactly what they built for you, rather than having the freedom to perform open-ended testing, customization, and independent research. 
+For quite some time, I have wanted to build my own dedicated homelab for defensive security and Blue Team operations.I was heavily relying on guided online training platforms. While those environments are amazing, you download a configuration file, jump on their VPN, and follow a pre-determined track. You are mostly forced to look at exactly what they built for you, rather than having the freedom to perform open-ended testing, customization, and independent research. 
 
-Now, I am finally architecting and building my own virtual sandbox network. This project series is designed to document that exact setup for anyone tracking down this path who wants a reliable baseline to practice specific methodologies, security engineering tools, and blue team defense outside of typical gamified structures. 
+Now, I am finally building my own virtual sandbox network. This project series is meant to document that exact setup for anyone tracking down this path who wants a reliable baseline to practice specific methodologies, security engineering tools, and blue team defense. 
 
 ## Why a Virtual Workstation?
 
@@ -25,20 +25,17 @@ Defensive labs—especially if you plan to aggregate system events or integrate 
 I am currently running this entire setup on an **Acer Nitro V15** with the following technical specifications:
 
 * **CPU:** Intel Core i5-13420H
-* **RAM:** 32GB DDR5 5600MHz (Crucial/Adata Upgraded Baseline)
+* **RAM:** 32GB DDR5 5600MHz 
 * **OS Storage:** 512GB NVMe M.2 SSD 
 * **Lab/VM Storage:** 2TB NVMe M.2 SSD (Dedicated Expansion)
 
-When picking out a laptop for virtualization engineering, the most critical factor is the processor layout, since CPUs cannot be upgraded later on. Storage arrays and memory banks can easily be swapped or expanded over time to match the growing footprint of the lab assets.
+When picking out a laptop for virtualization engineering, the most critical factor is the processor layout, since CPUs cannot be upgraded later on. 
 
 ## Tool Stack
 
 These are the primary platform tools utilized across this infrastructure series:
 
-1. **VMware Workstation Pro / VirtualBox** – Deployed as the core Type-2 hypervisor engine to configure host virtual networks, manage isolated host-only subnets, and handle configuration snapshots before breaking configurations.
+1. **VMware Workstation Pro** – Deployed as the core Type-2 hypervisor engine to configure host virtual networks, manage isolated host-only subnets, and handle configuration snapshots before breaking configurations.
 2. **Draw.io** – An open-source diagramming utility used to explicitly map out network configurations, segment localized VLAN targets, and trace traffic routing topology layers.
 3. **Joplin / Markdown Notes** – A markdown-based system directory mapping documentation log. Keeping precise logs of active static IP ranges, asset configuration variables, and credentials is essential to prevent losing track of machine variables.
 
-## Summary
-
-Now that the system hardware parameters and administrative tool stacks are established, the next phase focuses directly on laying down our explicit network requirements, tracing the isolated subnet topology paths, and spinning up our defensive perimeter layout.
