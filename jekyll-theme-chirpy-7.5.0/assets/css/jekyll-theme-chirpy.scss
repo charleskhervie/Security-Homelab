@@ -9,3 +9,14 @@
 ';
 
 /* append your custom style below */
+
+/* Kill the infinite loading shimmer glitch on images */
+.shimmer {
+  background: none !important;
+  animation: none !important;
+}
+.shimmer::before {
+  content: none !important;
+  background: none !important;
+  animation: none !important;
+}
