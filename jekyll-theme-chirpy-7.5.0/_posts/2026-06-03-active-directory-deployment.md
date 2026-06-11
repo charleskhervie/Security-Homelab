@@ -19,16 +19,16 @@ The goal of this project was to architect, deploy, and configure an enterprise-g
 ┌─────────────────────────────────────────────────────────┐
 │ Isolated Host-Only Virtual Network (192.168.10.0/24)    │
 │                                                         │
-│ ┌───────────────────────────┐                          │
-│ │ Windows Server 2022       │                          │
-│ │ Domain Controller (DC)    │                          │
-│ │ IP: 192.168.10.10         │                          │
-│ │ Domain: lab.charles.com   │                          │
-│ └─────────────┬─────────────┘                          │
-│               │                                        │
-│ ├──► [Mock OU: IT_Admins Group]                       │
-│ ├──► [Mock OU: HR_Staff Group]                        │
-│ └──► [Mock OU: Finance_Users Group]                   │
+│ ┌───────────────────────────┐                           │
+│ │ Windows Server 2022       │                           │
+│ │ Domain Controller (DC)    │                           │
+│ │ IP: 192.168.10.10         │                           │
+│ │ Domain: lab.charles.com   │                           │
+│ └─────────────┬─────────────┘                           │
+│               │                                         │
+│ ├──► [Mock OU: IT_Admins Group]                         │
+│ ├──► [Mock OU: HR_Staff Group]                          │
+│ └──► [Mock OU: Finance_Users Group]                     │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -143,12 +143,15 @@ _All OUs, groups, and users now visible in ADUC_
 If you need to rename the domain after initial setup:
 
 **Step 1: Generate architecture XML file**
+
 ```cmd
 rendom /list
 ```
+
 This creates `Domainlist.xml` containing your domain blueprint.
 
 **Step 2: Edit the Domain Name in XML**
+
 - Open `Domainlist.xml` with Notepad
 - Replace old domain names with new one
 - Update `<NetBiosName>` if changing root name
@@ -169,15 +172,18 @@ _Editing domain values in the XML file_
 _Updated domain rename XML values_
 
 **Step 3: Upload and Validate**
+
 ```cmd
 rendom /upload
 rendom /prepare
 ```
 
 **Step 4: Execute the rename**
+
 ```cmd
 rendom /execute
 ```
+
 Note: The AD will reboot if successful.
 
 ![Rendom Upload Prepare](/assets/img/posts/active-directory/Screenshot%202026-06-03%20224708.png){: width="700" height="400" .no-lazy}
@@ -187,6 +193,7 @@ _Uploading and preparing the domain rename configuration_
 _Executing the domain rename workflow_
 
 **Step 5: Clean Up Group Policies**
+
 ```cmd
 gpfixup /olddns:lab.charles.com /newdns:lab.corp.local.com
 gpfixup /oldnb:LABCHARLES /newnb:LABCORP
@@ -258,6 +265,7 @@ foreach ($User in $Employees) {
 - `Add-ADGroupMember` instantly assigns users to their department group
 
 **Step 3: Execute the script**
+
 ```powershell
 .\Provision-Users.ps1
 ```
@@ -271,6 +279,7 @@ foreach ($User in $Employees) {
 A healthy directory infrastructure relies on solid DNS records. Verification ensures proper name resolution.
 
 **Commands executed:**
+
 ```cmd
 nslookup homelab.local
 dcdiag /test:Connectivity
@@ -279,6 +288,7 @@ dcdiag /test:Connectivity
 **Expected behavior:** The local DNS server must resolve the domain to the DC's static IP address without dropping packets.
 
 **Result verification:**
+
 ```
 C:\Users\Administrator> nslookup homelab.local
 Server: Unknown
@@ -293,6 +303,7 @@ Addresses: 192.168.10.10
 To prove directory object parameters were successfully mapped during bulk automation, object queries were executed.
 
 **Command executed:**
+
 ```powershell
 Get-ADUser -Identity "charl_admin" -Properties MemberOf, PasswordExpired
 ```
@@ -300,6 +311,7 @@ Get-ADUser -Identity "charl_admin" -Properties MemberOf, PasswordExpired
 **Expected behavior:** Account properties confirm group membership and security parameter flags.
 
 **Result telemetry:**
+
 ```
 DistinguishedName : CN=Charl Admin,OU=IT,OU=Departments,DC=homelab,DC=local
 Enabled : True
@@ -335,5 +347,3 @@ The OU and security group structure separates standard departmental tier access 
 **Domain Controller**: Running and operational  
 **Users Provisioned**: 15+ mock accounts across 3 departments  
 **Testing**: All DNS and AD health checks passing
-
-SimplyCodes
