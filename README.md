@@ -1,4 +1,4 @@
-Virtual Security Homelab & Documentation
+## Virtual Security Homelab & Documentation
 
 This repository contains the configuration, scripts, and documentation for an isolated enterprise-grade virtual homelab. The environment is used to simulate production infrastructure for security engineering, privilege delegation, and defensive operations.
 
