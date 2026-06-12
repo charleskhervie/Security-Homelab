@@ -13,7 +13,7 @@ The portfolio is built using the Jekyll Chirpy theme and deployed via GitHub Act
 * **Operating Systems:** Windows Server 2022 Standard, Windows 10 Enterprise, Kali Linux
 * **Identity Management:** Active Directory Domain Services (AD DS), DNS, Group Policy (GPOs)
 * **Automation:** PowerShell, CMD scripting
-* **Networking:** Isolated Host-Only segment (192.168.10.0/24) via VMware Workstation / VirtualBox
+* **Networking:** Isolated Host-Only segment (192.168.10.0/24) via VMware Workstation Pro
 
 ---
 
