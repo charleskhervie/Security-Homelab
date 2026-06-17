@@ -1,5 +1,6 @@
 ---
 title: "Project 0: Building a Blue Team Homelab - Introduction"
+layout: post
 date: 2026-06-01
 categories: [Homelab, Setup]
 tags: [Virtualization, VMware, Network, Architecture]
