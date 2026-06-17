@@ -13,7 +13,7 @@ The goal of this project was to architect, deploy, and configure an enterprise-g
 
 ### Network Architecture
 
-![Logical Network Topology](/assets/img/posts/active-directory/1topology.png){: width="750" height="450" .no-lazy}
+![Logical Network Topology](/assets/img/posts/active-directory/1topology.png){: width="500" height="300" .no-lazy}
 _Logical architecture map of the isolated host-only testing environment_
 
 
