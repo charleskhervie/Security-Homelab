@@ -3,7 +3,7 @@ title: "Project 1: Enterprise Active Directory Architecture & Deployment"
 date: 2026-06-03
 categories: [Homelab, Active Directory]
 tags: [AD-DS, PowerShell, Identity-Management, Domain-Controller]
-author: Charles Khervie Realino
+author: name
 ---
 
 ## Objective & Network Topology
