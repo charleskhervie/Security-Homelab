@@ -3,7 +3,7 @@ title: "Project 0: Building a Blue Team Homelab - Introduction"
 date: 2026-06-01
 categories: [Homelab, Setup]
 tags: [Virtualization, VMware, Network, Architecture]
-author: name
+
 ---
 
 For quite some time, I have wanted to build my own dedicated homelab for defensive security and Blue Team operations.I was heavily relying on guided online training platforms. While those environments are amazing, you download a configuration file, jump on their VPN, and follow a pre-determined track. You are mostly forced to look at exactly what they built for you, rather than having the freedom to perform open-ended testing, customization, and independent research. 
