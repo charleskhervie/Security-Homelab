@@ -29,7 +29,7 @@ jobs:
         with:
           ruby-version: '3.3'
           bundler-cache: true
-          working-directory: 'jekyll-theme-chirpy-7.5.0' # 👈 Explicitly forces Ruby to see the Gemfile
+          working-directory: 'jekyll-theme-chirpy-7.5.0' 
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -37,7 +37,7 @@ jobs:
           node-version: '20'
 
       - name: Install Tools & Build Site
-        working-directory: 'jekyll-theme-chirpy-7.5.0' # 👈 Explicitly forces npm to see package.json
+        working-directory: 'jekyll-theme-chirpy-7.5.0' 
         run: |
           npm install
           bundle exec jekyll build
