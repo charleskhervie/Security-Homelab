@@ -13,25 +13,9 @@ The goal of this project was to architect, deploy, and configure an enterprise-g
 
 ### Network Architecture
 
-```
-[ NAT / Internet Gateway ]
-│ (Used for initial updates/patching)
-▼
-┌─────────────────────────────────────────────────────────┐
-│ Isolated Host-Only Virtual Network (192.168.10.0/24)    │
-│                                                         │
-│ ┌───────────────────────────┐                           │
-│ │ Windows Server 2022       │                           │
-│ │ Domain Controller (DC)    │                           │
-│ │ IP: 192.168.10.10         │                           │
-│ │ Domain: lab.charles.com   │                           │
-│ └─────────────┬─────────────┘                           │
-│               │                                         │
-│ ├──► [Mock OU: IT_Admins Group]                         │
-│ ├──► [Mock OU: HR_Staff Group]                          │
-│ └──► [Mock OU: Finance_Users Group]                     │
-└─────────────────────────────────────────────────────────┘
-```
+![Logical Network Topology](/assets/img/posts/active-directory/1topology.png){: width="750" height="450" .no-lazy}
+_Logical architecture map of the isolated host-only testing environment_
+
 
 ### Environment Specifications
 
