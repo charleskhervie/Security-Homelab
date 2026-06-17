@@ -4,10 +4,9 @@ date: 2026-06-01
 categories: [Homelab, Setup]
 tags: [Virtualization, VMware, Network, Architecture]
 toc: true
-
 ---
 
-For quite some time, I have wanted to build my own dedicated homelab for defensive security and Blue Team operations.I was heavily relying on guided online training platforms. While those environments are amazing, you download a configuration file, jump on their VPN, and follow a pre-determined track. You are mostly forced to look at exactly what they built for you, rather than having the freedom to perform open-ended testing, customization, and independent research. 
+For quite some time, I have wanted to build my own dedicated homelab for defensive security and Blue Team operations. I was heavily relying on guided online training platforms. While those environments are amazing, you download a configuration file, jump on their VPN, and follow a pre-determined track. You are mostly forced to look at exactly what they built for you, rather than having the freedom to perform open-ended testing, customization, and independent research. 
 
 Now, I am finally building my own virtual sandbox network. This project series is meant to document that exact setup for anyone tracking down this path who wants a reliable baseline to practice specific methodologies, security engineering tools, and blue team defense. 
 
@@ -23,6 +22,7 @@ Instead of dealing with the overhead, noise, and cost of physical server racks, 
 
 Defensive labs—especially if you plan to aggregate system events or integrate security information and event management (SIEM) consoles later—are resource-heavy. While you won't need to run every single target endpoint simultaneously during early build phases, you still need a solid processing baseline to prevent the host hypervisor from freezing up. 
 
+### Host Machine Architecture
 I am currently running this entire setup on an **Acer Nitro V15** with the following technical specifications:
 
 * **CPU:** Intel Core i5-13420H
@@ -32,11 +32,15 @@ I am currently running this entire setup on an **Acer Nitro V15** with the follo
 
 When picking out a laptop for virtualization engineering, the most critical factor is the processor layout, since CPUs cannot be upgraded later on. 
 
-## Tool Stack
+## Tool Stack & Documentation
 
 These are the primary platform tools utilized across this infrastructure series:
 
-1. **VMware Workstation Pro** – Deployed as the core Type-2 hypervisor engine to configure host virtual networks, manage isolated host-only subnets, and handle configuration snapshots before breaking configurations.
-2. **Draw.io** – An open-source diagramming utility used to explicitly map out network configurations, segment localized VLAN targets, and trace traffic routing topology layers.
-3. **Joplin / Markdown Notes** – A markdown-based system directory mapping documentation log. Keeping precise logs of active static IP ranges, asset configuration variables, and credentials is essential to prevent losing track of machine variables.
+### Core Hypervisor Engine
+* **VMware Workstation Pro** – Deployed as the core Type-2 hypervisor engine to configure host virtual networks, manage isolated host-only subnets, and handle configuration snapshots before breaking configurations.
 
+### Network Topology Diagramming
+* **Draw.io** – An open-source diagramming utility used to explicitly map out network configurations, segment localized VLAN targets, and trace traffic routing topology layers.
+
+### Environment Logging
+* **Joplin / Markdown Notes** – A markdown-based system directory mapping documentation log. Keeping precise logs of active static IP ranges, asset configuration variables, and credentials is essential to prevent losing track of machine variables.
