@@ -13,17 +13,9 @@ The goal of this project was to provision, harden, and automate a production-sty
 
 ### Network Architecture
 
-```text
-Isolated Host-Only Virtual Network (192.168.10.0/24)
+![Logical Network Topology](/assets/img/posts/project2%20hardened%20linux/2topology.png){: width="500" height="300" .no-lazy}
+_Logical architecture map of the isolated host-only testing environment_
 
-Windows Server 2022 Domain Controller
-IP: 192.168.10.10
-Role: Identity and DNS baseline from Project 1
-
-Ubuntu Server 22.04 LTS
-IP: 192.168.10.20
-Role: Hardened Nginx web server, backup host, future Wazuh agent
-```
 
 ### Environment Specifications
 
